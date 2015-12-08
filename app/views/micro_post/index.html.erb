@@ -1,0 +1,28 @@
+<table>
+<tr>
+		<th>
+		Name</th>
+		<th>
+		id </th>
+		<th>
+		status</th>
+		</tr>
+		<h1>
+		chowdary
+		</h1>
+		<% @micro_post.each do |micro_post| %>
+		
+		
+        <tr>
+		<td>
+		<%= micro_post.name%>
+		</td>
+		<td>
+		<%= micro_post.status%>
+		</td>
+			<td>
+		<%= micro_post.id%>
+		</td>
+	</tr>
+	<%end%>
+</table>

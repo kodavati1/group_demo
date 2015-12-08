@@ -1,0 +1,31 @@
+<table>
+<tr>
+		<th>
+		Name</th>
+		<th>
+		id </th>
+		<th>
+		status</th>
+		</tr>
+		<h1>
+		Ruby
+		</h1>
+		<% @product.each do |product| %>
+		
+		
+        <tr>
+		<td>
+		<%= product.name%>
+		</td>
+		<td>
+		<%= product.status%>
+		</td>
+			<td>
+		<%= product.id%>
+		</td>
+
+		<td><%= link_to 'show', product %> </td>
+		<td><%= link_to 'edit', edit_product_path(product) %></td>
+	</tr>
+	<%end%>
+</table>

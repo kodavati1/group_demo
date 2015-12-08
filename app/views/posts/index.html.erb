@@ -1,0 +1,32 @@
+<table>
+<tr>
+		<th>
+		Raghu</th>
+		<th>
+		id </th>
+		</tr>
+		<h1>
+		RAGHU
+		</h1>
+		<% @posts.each do |post| %>
+		
+		
+        <tr>
+		<td>
+		<%= post.name%>
+		</td>
+		<td>
+			
+		<%= post.id%>
+
+		</td>
+		<td>
+	 </td>
+	 <td>
+	 </td>
+
+	<td><%= link_to 'show', post %> </td>
+	<td><%= link_to 'edit', edit_post_path(post) %></td>
+	</tr>
+	<%end%>
+</table>

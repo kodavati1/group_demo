@@ -1,0 +1,23 @@
+<% unless @address.nil? %>
+  <table class="mrgn_lft_6">
+    <% @addresses.each do |address| %>
+      <tr>
+        <%#= content_tag_for(:tr, keyword) do %>
+          <td>
+            <span data-toggle='tooltip' data-placement='left' title=<%= addresses.address %>>
+                <%= truncate(address.addresses, length: 30) %>
+            </span>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <%# unless current_party.published? %>
+            <td> <%= link_to '', edit_address_path(address),  class: "glyphicon glyphicon-pencil", remote: true %></td>
+            <td><%= link_to '', address_path(address),  class: "glyphicon glyphicon-remove", remote: 'true', method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <%# else %>
+          <%# end %>
+        <%#end %>
+        <td><%= link_to 'show', address %> </td>
+        <td><%= link_to 'edit', edit_address_path(address) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

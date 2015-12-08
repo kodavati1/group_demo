@@ -1,0 +1,8 @@
+<% if @address.errors.any? -%>
+  $("#address_flash_notice").hide(300);
+  $("#address_errors").html("<%#= j render 'shared/errors/errors', object: @type  %>").show();
+<% else -%>
+  $("#address_form").html("<%= j render 'address/form' %>");
+  $("#address_errors").hide(300);
+  $("#address_flash_notice").html("<%#= j render 'shared/flash_mesg' %>").show(300).delay(1000).hide(300);
+<% end -%>

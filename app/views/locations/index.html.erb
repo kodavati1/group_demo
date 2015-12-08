@@ -1,0 +1,32 @@
+<table>
+<tr>
+		<th>
+		Name</th>
+		<th>
+		id </th>
+		<th>
+		status</th>
+		</tr>
+		<h1>
+		style="color:blue;">RAGHU</h1>
+		</h1>
+		<% @locations.each do |location| %>
+		
+		
+        <tr>
+		<td>
+		<%= location.name%>
+		</td>
+		<td>
+			
+		<%= location.id%>
+		</td>
+		<td>
+		<%= location.status%>
+		</td>
+		<td><%= link_to 'show', location %>
+
+		<td><%= link_to 'edit', edit_location_path(location) %></td>
+	</tr>
+	<%end%>
+</table>

@@ -1,0 +1,32 @@
+<table>
+<tr>
+		<th>
+		Name</th>
+		<th>
+		id </th>
+		<th>
+		status</th>
+		</tr>
+		<h1>
+		RAILS
+		</h1>
+		<% @categories.each do |category| %>
+		
+		
+        <tr>
+		<td>
+		<%= category.name%>
+		</td>
+		<td>
+			
+		<%= category.id%>
+		</td>
+		<td>
+		<%= category.status%>
+		</td>
+
+		<td><%= link_to 'show', category %> </td>
+		<td><%= link_to 'edit', edit_category_path(category) %></td>
+	</tr>
+	<%end%>
+</table>

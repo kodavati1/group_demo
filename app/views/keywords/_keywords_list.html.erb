@@ -1,0 +1,23 @@
+<% unless @keywords.nil? %>
+  <table class="mrgn_lft_6">
+    <% @keywords.each do |keyword| %>
+      <tr>
+        <%#= content_tag_for(:tr, keyword) do %>
+          <td>
+            <span data-toggle='tooltip' data-placement='left' title=<%= keyword.keyword %>>
+                <%= truncate(keyword.keyword, length: 30) %>
+            </span>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <%# unless current_party.published? %>
+            <td> <%= link_to '', edit_keyword_path(keyword),  class: "glyphicon glyphicon-pencil", remote: true %></td>
+            <td><%= link_to '', keyword_path(keyword),  class: "glyphicon glyphicon-remove", remote: 'true', method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          <%# else %>
+          <%# end %>
+        <%#end %>
+        <td><%= link_to 'show', keyword %> </td>
+        <td><%= link_to 'edit', edit_keyword_path(keyword) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

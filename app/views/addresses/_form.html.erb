@@ -1,0 +1,21 @@
+<%= simple_form_for(@address, remote: true, html: {class: 'customize_simple_form', id: 'form_addresses'}) do | f | %>
+  <%= render 'addresses/user_detail_for_segment', obj: @addresses.present? ? @addresses.last : nil, segment: 'addresses',f: f %>
+    <div id="addresses_list">
+      <%= render 'addresses/addresses_list' %>
+    </div>
+    <div class="clear_with_height"></div>
+    <%# unless current_party.published? %>
+      <div id='addresses_flash_notice' class="collapse"></div>
+      <div id="addresses_errors"></div>
+
+      <div class="form-group mrgn_lft_2">
+        <%#= hidden_field_tag :segment_detail_id, sub_seg.id %>
+        <%= f.input :address, input_html: {class: 'form-control col-xs-5'}, placeholder: 'Enter address' %>
+      </div>
+    <%#end %>
+<% end %>
+<script>
+  $('#reset_address').click(function () {
+      $('#form_addresses')[0].reset();
+  });
+</script>
