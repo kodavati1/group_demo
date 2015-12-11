@@ -2,13 +2,15 @@
   <span>
     <%# if obj.present? && obj.updated_at.present? && obj.segment.user.present? %>
       <i class='icon-user'></i> <%#= obj.segment.user.username  %>
-      <span> | <%#= obj.updated_at.strftime("%m/%d/%Y") %></span>
+      <span>  <%#= obj.updated_at.strftime("%m/%d/%Y") %></span>
     <%# end %>
   </span>
   <span>
     <%# unless current_party.published? %>
       <%= f.submit 'RESET', class: 'custom btn btn-default', id: 'reset_keyword' %>
       <%= f.submit 'SAVE' , class: 'custom btn btn-default', id: 'save_keyword'  %>
-    <%# end %>
+      <%= f.submit 'PAGE' , class: 'custom btn btn-default', id: 'page_keyword' %>
+     
+     <%# end %>
   </span>
 </div>

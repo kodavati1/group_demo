@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'countries/index'
+
+  get 'countries/show'
+
+  get 'countries/edit'
+
+  get 'countries/sample'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 resources :clients
@@ -10,6 +18,7 @@ resources :locations
 resources :categories
 resources :keywords
 resources :addresses
+resources :types
 
 
 
